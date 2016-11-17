@@ -1,0 +1,26 @@
+<div class="footer-content">
+    <div class="footer-links">
+        <h1>Recent Fit Tips</h1>
+        <ul>
+            <% fittips[0..5].each do |fit_tip| %>
+                <li>
+                    <%= link_to fit_tip.fragments['title'].value, "/fit-tips/#{fit_tip.slugs[0]}.html" %>
+                </li>
+            <% end %>
+        </ul>
+        <h1>Quick Links</h1>
+        <ul>
+            <li><%= link_to 'Home', '/index.html' %></li>
+            <li><%= link_to 'Races', '/races.html' %></li>
+            <li><%= link_to 'Fit Tips', '/fit_tips.html' %></li>
+            <li><%= link_to 'Sponsors', '/sponsors.html' %></li>
+        </ul>
+        <a href="<%= globals[0].fragments['register_link'].url %>" target="_blank"><button>CLICK TO REGISTER!</button></a>
+    </div>
+    <div class="footer-text">
+        <%= globals[0].fragments['footer_text'].as_html(nil) %>
+    </div>
+</div>
+<div class="footer-credits">
+    © <%= Time.now.year %> Get It Dunn 5k &amp; Half Marathon | Menomonie, WI
+</div>

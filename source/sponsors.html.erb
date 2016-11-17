@@ -1,0 +1,13 @@
+---
+title: Sponsors
+---
+
+<div class="outer">
+    <% sponsors.each do |sponsor| %>
+        <ul class="sponsors">
+            <li class="sponsor">
+                <%= sponsor.fragments['logo'].as_html %>
+            </li>
+        </ul>
+    <% end %>
+</div>

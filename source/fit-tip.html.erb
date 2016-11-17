@@ -1,0 +1,20 @@
+---
+title: Fit Tip
+---
+
+<div class="outer">
+    <article>
+        <h1><%= fit_tip.fragments['title'].as_html(nil) %></h1>
+        <%= fit_tip.fragments['author_name'].as_html(nil) %> /
+        <time datetime="<%= fit_tip.fragments['date'].value.iso8601(3) %>">
+            <%= fit_tip.fragments['date'].value.strftime('%B %e, %Y') %>
+        </time>
+        <%= fit_tip.fragments['text'].as_html(nil) %>
+        <div class="byline">
+            <% if fit_tip.fragments['author_image'] %>
+                <img src="<%= fit_tip.fragments['author_image'].main.url %>">
+            <% end %>
+            <%= fit_tip.fragments['author_byline'].as_html(nil) %>
+        </div>
+    </article>
+</div>

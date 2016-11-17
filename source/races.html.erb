@@ -1,0 +1,21 @@
+---
+title: Races
+---
+
+<% races.each do |race| %>
+    <div class="race">
+        <div class="outer">
+            <h1><%= race.fragments['name'].as_html(nil) %></h1>
+        </div>
+        <div class="outer">
+            <!--h2><%= link_to 'Past Results', 'results.html' %></h2-->
+            <%= race.fragments['details'].as_html(nil) %>
+        </div>
+        <!-- wrap map iframe to turn off mouse scroll and turn it back on on click -->
+        <div class="map-wrap">
+            <div class="overlay" onClick="style.pointerEvents='none'"></div>
+                <iframe class="map" src="https://www.google.com/maps/d/embed?mid=<%= race.fragments['route'].value %>" frameBorder="0"></iframe>
+            </div>
+        </div>
+    </div>
+<% end %>

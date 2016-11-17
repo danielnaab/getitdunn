@@ -1,0 +1,86 @@
+@import "normalize";
+
+@import "bourbon";
+@import "neat";
+@import "base/base";
+
+@import "hero";
+
+
+footer {
+    background: $secondary-background-color;
+    .footer-content {
+        @include outer-container;
+        padding: 1em;
+        .footer-links {
+            @include span-columns(4);
+            font-size: 80%;
+        }
+        .footer-text {
+            @include span-columns(8);
+            @include omega();
+            font-size: 80%;
+        }
+    }
+    .footer-credits {
+        text-align: center;
+        font-size: 80%;
+    }
+}
+
+header {
+    padding: 1em;
+    nav {
+        a {
+            margin-right: 1em;
+        }
+    }
+}
+
+.index {
+    h1.register {
+        text-align: center;
+    }
+}
+
+
+.fit-tips {
+}
+
+.fit-tip, .fit-tips {
+    article {
+        .byline {
+            font-style: italic;
+            color: $subdued-font-color;
+            img {
+                max-width: 175px;
+                float: left;
+                margin: 0 1em 1em 0;
+            }
+        }
+    }
+}
+
+.fit-tips {
+    article {
+        time {
+
+        }
+    }
+}
+
+.race {
+    .map {
+        width: 100%;
+        height: 480px;
+    }
+    .map-wrap {
+        position: relative;
+    }
+    .overlay {
+        width: 100%;
+        min-height: 480px;
+        position: absolute;
+        top: 0;
+    }
+}
