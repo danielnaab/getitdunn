@@ -1,6 +1,10 @@
 <nav>
     <%= link_to 'Home', '/index.html' %>
-    <%= link_to 'Races', '/races.html' %>
+    <% races.each do |race| %>
+        <%= link_to race.fragments['name'].as_html(nil), "/#{race.slugs[0]}.html" %>
+    <% end %>
     <%= link_to 'Fit Tips', '/fit-tips.html' %>
-    <%= link_to 'Sponsors', '/sponsors.html' %></li>
+    <%= link_to 'Sponsors', '/sponsors.html' %>
+    <%= link_to 'Results', '/results.html' %>
+    <%= link_to 'About Us', '/about-us.html' %>
 </nav>

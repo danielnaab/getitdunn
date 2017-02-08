@@ -49,22 +49,26 @@ activate :prismic do |f|
   f.link_resolver = ->(link) {binding.pry; "#{link.type.pluralize}/#{link.slug}"}
 end
 
-races = YAML::load(File.read('data/prismic_races'))
-races.each do |index, race|
-  proxy(
-    "/results/#{race.slugs[0]}.html",
-    '/results.html',
-    :locals => {:race => race},
-    :ignore => true
-  )
+if File.exists? ('data/prismic_races')
+  races = YAML::load(File.read('data/prismic_races'))
+  races.each do |index, race|
+    proxy(
+      "/#{race.slugs[0]}.html",
+      '/race.html',
+      :locals => {:race => race},
+      :ignore => true
+    )
+  end
 end
 
-fit_tips = YAML::load(File.read('data/prismic_fittips'))
-fit_tips.each do |index, fit_tip|
-  proxy(
-    "/fit-tips/#{fit_tip.slugs[0]}.html",
-    '/fit-tip.html',
-    :locals => {:fit_tip => fit_tip},
-    :ignore => true
-  )
+if File.exists? ('data/prismic_fittips')
+  fit_tips = YAML::load(File.read('data/prismic_fittips'))
+  fit_tips.each do |index, fit_tip|
+    proxy(
+      "/fit-tips/#{fit_tip.slugs[0]}.html",
+      '/fit-tip.html',
+      :locals => {:fit_tip => fit_tip},
+      :ignore => true
+    )
+  end
 end

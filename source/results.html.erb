@@ -1,3 +1,26 @@
-<div class="outer">
-    Results
+---
+title: Results
+---
+
+<div class="race">
+    <div class="outer">
+        <h1>Race Results</h1>
+        Jump to:
+        <% results.sort! { |a,b| a.fragments['year'].value <=> b.fragments['year'].value }.reverse!.each do |result| %>
+            <a href="#<%= result.fragments['year'].value.round %>">
+                <%= result.fragments['year'].value.round %>
+            </a>
+        <% end %>
+        <% results.sort! { |a,b| a.fragments['year'].value <=> b.fragments['year'].value }.reverse!.each do |result| %>
+            <a name="<%= result.fragments['year'].value.round %>">
+                <% if result.fragments['resultsurl'] %>
+                    <iframe width="100%" height="400" frameborder="0" src="<%= result.fragments['resultsurl'].url %>"></iframe>
+                <% end %>
+                <% if result.fragments['extra-race-content'] %>
+                    <h1><%= result.fragments['year'].value.round %></h1>
+                    <%= result.fragments['extra-race-content'].as_html(nil) %>
+                <% end %>
+            </a>
+        <% end %>
+    </div>
 </div>

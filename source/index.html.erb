@@ -5,7 +5,7 @@ title: Welcome!
 <div class="hero" style="background-image: url(<%= homes[0].fragments['image'].main.url %>)">
     <div class="wrapper">
         <div class="overlay">
-            <img class="logo" src="<%= globals[0].fragments['logo'].main.url %>">
+            <img class="logo" src="<%= generals[0].fragments['logo'].main.url %>">
             <% if homes[0].fragments['overlay'] %>
                 <h1><%= homes[0].fragments['overlay'].as_html(nil) %></h1>
             <% end %>
@@ -15,7 +15,7 @@ title: Welcome!
 
 <div class="outer">
     <h1 class="register">
-        <a href="<%= globals[0].fragments['register_link'].url %>" target="_blank"><button>CLICK TO REGISTER!</button></a>
+        <a href="<%= generals[0].fragments['register_link'].url %>" target="_blank"><button>CLICK TO REGISTER!</button></a>
     </h1>
     <%= homes[0].fragments['page_text'].as_html(nil) %>
 </div>

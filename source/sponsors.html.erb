@@ -3,11 +3,81 @@ title: Sponsors
 ---
 
 <div class="outer">
-    <% sponsors.each do |sponsor| %>
-        <ul class="sponsors">
-            <li class="sponsor">
-                <%= sponsor.fragments['logo'].as_html %>
-            </li>
+    <h1>THANKS TO OUR SPONSORS!</h1>
+    <p>This event is possible because of the generous support of our sponsors. All profits are being directed to our fitness, education and life scholarships awarded by Mind Over Matter (M.O.M.), Inc., the nonprofit presenter of the Get It Dunn run.</p>
+    <p>We’d also like to thank the Dunn County Sheriff’s Office, Menomonie Police Department and the Dunn County ARES/RACES Team (Amateur Radio Emergency Service/ Radio Amateur Civil Emergency Service) for their ongoing support of this event. Along with our volunteers, these groups ensure the safety of our race courses.</p>
+    <p>If you’d like to become a sponsor, we offer a wide range of sponsorship packages: click for more information.</p>
+
+    <% @level_sponsors = sponsors.group_by {|s| s.fragments['level'].value} %>
+
+    <% if @level_sponsors.has_key? 'Platinum' %>
+        <a href="#platinum">Platinum</a>
+    <% end %>
+    <% if @level_sponsors.has_key? 'Gold' %>
+        <a href="#gold">Gold</a>
+    <% end %>
+    <% if @level_sponsors.has_key? 'Silver' %>
+        <a href="#silver">Silver</a>
+    <% end %>
+    <% if @level_sponsors.has_key? 'Bronze' %>
+        <a href="#bronze">Bronze</a>
+    <% end %>
+    <% if @level_sponsors.has_key? 'Friends' %>
+        <a href="#friends">Friends</a>
+    <% end %>
+
+    <% if @level_sponsors.has_key? 'Platinum' %>
+        <h1><a name="platinum">Platinum</a></h1>
+        <ul class="sponsors sponsors-platinum">
+            <% @level_sponsors['Platinum'].each do |sponsor| %>
+                <li class="sponsor">
+                    <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <% if @level_sponsors.has_key? 'Gold' %>
+        <h1><a name="gold">Gold</a></h1>
+        <ul class="sponsors sponsors-gold">
+            <% @level_sponsors['Gold'].each do |sponsor| %>
+                <li class="sponsor">
+                    <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <% if @level_sponsors.has_key? 'Silver' %>
+        <h1><a name="silver">Silver</a></h1>
+        <ul class="sponsors sponsors-silver">
+            <% @level_sponsors['Silver'].each do |sponsor| %>
+                <li class="sponsor">
+                    <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <% if @level_sponsors.has_key? 'Bronze' %>
+        <h1><a name="bronze">Bronze</a></h1>
+        <ul class="sponsors sponsors-bronze">
+            <% @level_sponsors['Bronze'].each do |sponsor| %>
+                <li class="sponsor">
+                    <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <% if @level_sponsors.has_key? 'Friend' %>
+        <h1><a name="friends">Friends</a></h1>
+        <ul class="sponsors sponsors-friends">
+            <% @level_sponsors['Friend'].each do |sponsor| %>
+                <li class="sponsor">
+                    <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
+                </li>
+            <% end %>
         </ul>
     <% end %>
 </div>

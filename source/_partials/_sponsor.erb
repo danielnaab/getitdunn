@@ -1,0 +1,12 @@
+<% if sponsor.fragments['logo'] %>
+    <% if sponsor.fragments['website'] %>
+        <a href="<%= sponsor.fragments['website'].url %>" target="_blank">
+            <%= sponsor.fragments['logo'].as_html %>
+        </a>
+    <% else %>
+        <%= sponsor.fragments['logo'].as_html %>
+    <% end %>
+<% end %>
+<% if sponsor.fragments['sponsor-text'] %>
+    <%= sponsor.fragments['sponsor-text'].as_html %>
+<% end %>

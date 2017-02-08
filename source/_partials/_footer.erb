@@ -11,14 +11,18 @@
         <h1>Quick Links</h1>
         <ul>
             <li><%= link_to 'Home', '/index.html' %></li>
-            <li><%= link_to 'Races', '/races.html' %></li>
-            <li><%= link_to 'Fit Tips', '/fit_tips.html' %></li>
+            <% races.each do |race| %>
+                <li><%= link_to race.fragments['name'].as_html(nil), "/#{race.slugs[0]}.html" %></li>
+            <% end %>
+            <li><%= link_to 'Fit Tips', '/fit-tips.html' %></li>
             <li><%= link_to 'Sponsors', '/sponsors.html' %></li>
+            <li><%= link_to 'Results', '/results.html' %></li>
+            <li><%= link_to 'About Us', '/about-us.html' %></li>
         </ul>
-        <a href="<%= globals[0].fragments['register_link'].url %>" target="_blank"><button>CLICK TO REGISTER!</button></a>
+        <a href="<%= generals[0].fragments['register_link'].url %>" target="_blank"><button>CLICK TO REGISTER!</button></a>
     </div>
     <div class="footer-text">
-        <%= globals[0].fragments['footer_text'].as_html(nil) %>
+        <%= generals[0].fragments['footer_text'].as_html(nil) %>
     </div>
 </div>
 <div class="footer-credits">
