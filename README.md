@@ -17,3 +17,7 @@ Next, run a local development server:
 ```
 bundle exec middleman server
 ```
+
+Notes:
+
+[Prismic ruby-kit documentation](http://prismicio.github.io/ruby-kit/Prismic/SearchForm.html)

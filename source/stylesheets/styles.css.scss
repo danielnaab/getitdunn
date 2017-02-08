@@ -84,3 +84,52 @@ header {
         top: 0;
     }
 }
+
+.sponsors {
+    h1 {
+        text-align: center;
+    }
+    .level-links {
+        text-align: center;
+        a {
+            margin: 1em;
+        }
+    }
+    ul {
+        list-style-type: none;
+        text-align: center;
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin: 1em;
+        }
+    }
+    img {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &.platinum {
+        img {
+            width: 350px;
+            height: auto;
+        }
+    }
+    &.gold {
+        img {
+            width: 250px;
+            height: auto;
+        }
+    }
+    &.silver {
+        img {
+            width: 200px;
+            height: auto;
+        }
+    }
+    &.bronze {
+        img {
+            width: 150px;
+            height: auto;
+        }
+    }
+}
