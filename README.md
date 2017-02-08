@@ -18,6 +18,13 @@ Next, run a local development server:
 bundle exec middleman server
 ```
 
+To deploy to Github pages:
+
+```
+bundle exec middleman build
+bundle exec middleman deploy
+```
+
 Notes:
 
 [Prismic ruby-kit documentation](http://prismicio.github.io/ruby-kit/Prismic/SearchForm.html)
