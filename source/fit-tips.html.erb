@@ -12,7 +12,7 @@ title: Fit Tips
             <%= fit_tip.fragments['author_name'].as_html(nil) %>
             <p>
                 <%= fit_tip.fragments['text'].blocks[0].text %>
-                <%= link_to 'Read more...', "/fit-tips/#{fit_tip.slugs[0]}.html" %>
+                <%= link_to 'Read more ▶', "/fit-tips/#{fit_tip.slugs[0]}.html", { :class => 'read-more'} %>
             </p>
         </article>
     <% end %>

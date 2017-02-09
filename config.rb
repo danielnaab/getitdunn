@@ -46,7 +46,8 @@ end
 activate :prismic do |f|
   f.api_url = 'https://dunn.prismic.io/api'
   f.release = 'master'
-  f.link_resolver = ->(link) {binding.pry; "#{link.type.pluralize}/#{link.slug}"}
+  #f.link_resolver = ->(link) {binding.pry; "#{link.type.pluralize}/#{link.slug}"}
+  f.link_resolver = ->(link) { "#{link.type.pluralize}/#{link.slug}" }
 end
 
 if File.exists? ('data/prismic_races')

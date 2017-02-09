@@ -2,31 +2,33 @@
 title: Sponsors
 ---
 
-<div class="outer">
-    <% @level_sponsors = sponsors.group_by {|s| s.fragments['level'].value} %>
+<% @level_sponsors = sponsors.group_by {|s| s.fragments['level'].value} %>
 
+<div class="outer">
+    <% if sponsorships[0].fragments['title-text'] %>
+        <h1><%= sponsorships[0].fragments['title-text'].value %></h1>
+    <% end %>
     <div class="level-links">
         <% if @level_sponsors.has_key? 'Platinum' %>
-            <a href="#platinum">Platinum</a>
+            <a class="platinum" href="#platinum">Platinum</a>
         <% end %>
         <% if @level_sponsors.has_key? 'Gold' %>
-            <a href="#gold">Gold</a>
+            <a class="gold" href="#gold">Gold</a>
         <% end %>
         <% if @level_sponsors.has_key? 'Silver' %>
-            <a href="#silver">Silver</a>
+            <a class="silver" href="#silver">Silver</a>
         <% end %>
         <% if @level_sponsors.has_key? 'Bronze' %>
-            <a href="#bronze">Bronze</a>
+            <a class="bronze" href="#bronze">Bronze</a>
         <% end %>
-        <% if @level_sponsors.has_key? 'Friends' %>
-            <a href="#friends">Friends</a>
+        <% if @level_sponsors.has_key? 'Friend' %>
+            <a class="friends" href="#friends">Friends</a>
         <% end %>
     </div>
 
-    <h1>THANKS TO OUR SPONSORS!</h1>
-    <p>This event is possible because of the generous support of our sponsors. All profits are being directed to our fitness, education and life scholarships awarded by Mind Over Matter (M.O.M.), Inc., the nonprofit presenter of the Get It Dunn run.</p>
-    <p>We’d also like to thank the Dunn County Sheriff’s Office, Menomonie Police Department and the Dunn County ARES/RACES Team (Amateur Radio Emergency Service/ Radio Amateur Civil Emergency Service) for their ongoing support of this event. Along with our volunteers, these groups ensure the safety of our race courses.</p>
-    <p>If you’d like to become a sponsor, we offer a wide range of sponsorship packages: click for more information.</p>
+    <% if sponsorships[0].fragments['top-text'] %>
+        <%= sponsorships[0].fragments['top-text'].as_html(nil) %>
+    <% end %>
 
     <% if @level_sponsors.has_key? 'Platinum' %>
         <h1><a name="platinum">Platinum</a></h1>
@@ -81,5 +83,10 @@ title: Sponsors
                 </li>
             <% end %>
         </ul>
+    <% end %>
+
+    <a name="become-a-sponsor"></a>
+    <% if sponsorships[0].fragments['become-a-sponsor'] %>
+        <%= sponsorships[0].fragments['become-a-sponsor'].as_html(reference) %>
     <% end %>
 </div>

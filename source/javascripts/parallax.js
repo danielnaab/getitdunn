@@ -1,19 +1,19 @@
-$(document).ready(function() {
-  if ($("#js-parallax-window").length) {
+$(document).ready(function () {
+  if ($('#js-parallax-window').length) {
     parallax();
   }
 });
 
-$(window).scroll(function(e) {
-  if ($("#js-parallax-window").length) {
+$(window).scroll(function (e) {
+  if ($('#js-parallax-window').length) {
     parallax();
   }
 });
 
-function parallax(){
-  if( $("#js-parallax-window").length > 0 ) {
-    var plxBackground = $("#js-parallax-background");
-    var plxWindow = $("#js-parallax-window");
+function parallax() {
+  if( $('#js-parallax-window').length > 0 ) {
+    var plxBackground = $('#js-parallax-background');
+    var plxWindow = $('#js-parallax-window');
 
     var plxWindowTopToPageTop = $(plxWindow).offset().top;
     var windowTopToPageTop = $(window).scrollTop();

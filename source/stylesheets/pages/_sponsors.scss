@@ -1,0 +1,81 @@
+.sponsors {
+    $levels: (
+        "platinum": #e5e4e2,
+        "gold": #ffd700,
+        "silver": #c0c0c0,
+        "bronze": #cd7f32,
+        "friends": #e6efc2,
+    ) !default;
+    .level-links {
+        text-align: center;
+        a {
+            margin: 1em;
+            $level-font-size: 1em;
+            @each $level, $color in $levels {
+                &.#{$level} {
+                    background-color: $color;
+                    font-size: $level-font-size;
+                    border-radius: $level-font-size * 5;
+                    color: darken($color, 60%);
+                    display: inline-block;
+                    line-height: 1;
+                    padding: 0.4em 1.2em;
+                }
+            }
+        }
+    }
+    h1 {
+        text-align: center;
+        @each $level, $color in $levels {
+            $level-font-size: .8em;
+            a[name=#{$level}] {
+                background-color: $color;
+                font-size: $level-font-size;
+                border-radius: $level-font-size * 5;
+                color: darken($color, 60%);
+                display: inline-block;
+                line-height: 1;
+                padding: 0.4em 1.2em;
+            }
+        }
+    }
+    ul.sponsors-list {
+        list-style-type: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin: 1em;
+        }
+        img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &.platinum {
+            img {
+                width: 300px;
+                height: auto;
+            }
+        }
+        &.gold {
+            img {
+                width: 250px;
+                height: auto;
+            }
+        }
+        &.silver {
+            img {
+                width: 200px;
+                height: auto;
+            }
+        }
+        &.bronze {
+            img {
+                width: 150px;
+                height: auto;
+            }
+        }
+    }
+}

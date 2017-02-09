@@ -1,0 +1,21 @@
+.fit-tip, .fit-tips {
+    article {
+        .byline {
+            font-style: italic;
+            color: $subdued-font-color;
+            img {
+                max-width: 175px;
+                float: left;
+                margin: 0 1em 1em 0;
+            }
+        }
+    }
+}
+
+.fit-tips {
+    article {
+        time {
+
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.race {
+    .map {
+        width: 100%;
+        height: 480px;
+    }
+    .map-wrap {
+        position: relative;
+    }
+    .overlay {
+        width: 100%;
+        min-height: 480px;
+        position: absolute;
+        top: 0;
+    }
+}
