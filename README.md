@@ -28,3 +28,6 @@ bundle exec middleman deploy
 Notes:
 
 [Prismic ruby-kit documentation](http://prismicio.github.io/ruby-kit/Prismic/SearchForm.html)
+
+The `trigger_proxy` directory includes a Heroku app for proxying TravisCI
+webhooks from Prismic.io.
