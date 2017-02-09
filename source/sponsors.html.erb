@@ -2,7 +2,7 @@
 title: Sponsors
 ---
 
-<div class="sponsors outer">
+<div class="outer">
     <% @level_sponsors = sponsors.group_by {|s| s.fragments['level'].value} %>
 
     <div class="level-links">
@@ -30,7 +30,7 @@ title: Sponsors
 
     <% if @level_sponsors.has_key? 'Platinum' %>
         <h1><a name="platinum">Platinum</a></h1>
-        <ul class="sponsors platinum">
+        <ul class="sponsors-list platinum">
             <% @level_sponsors['Platinum'].each do |sponsor| %>
                 <li class="sponsor">
                     <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
@@ -41,7 +41,7 @@ title: Sponsors
 
     <% if @level_sponsors.has_key? 'Gold' %>
         <h1><a name="gold">Gold</a></h1>
-        <ul class="sponsors gold">
+        <ul class="sponsors-list gold">
             <% @level_sponsors['Gold'].each do |sponsor| %>
                 <li class="sponsor">
                     <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
@@ -52,7 +52,7 @@ title: Sponsors
 
     <% if @level_sponsors.has_key? 'Silver' %>
         <h1><a name="silver">Silver</a></h1>
-        <ul class="sponsors silver">
+        <ul class="sponsors-list silver">
             <% @level_sponsors['Silver'].each do |sponsor| %>
                 <li class="sponsor">
                     <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
@@ -63,7 +63,7 @@ title: Sponsors
 
     <% if @level_sponsors.has_key? 'Bronze' %>
         <h1><a name="bronze">Bronze</a></h1>
-        <ul class="sponsors bronze">
+        <ul class="sponsors-list bronze">
             <% @level_sponsors['Bronze'].each do |sponsor| %>
                 <li class="sponsor">
                     <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
@@ -74,7 +74,7 @@ title: Sponsors
 
     <% if @level_sponsors.has_key? 'Friend' %>
         <h1><a name="friends">Friends</a></h1>
-        <ul class="sponsors friends">
+        <ul class="sponsors-list friends">
             <% @level_sponsors['Friend'].each do |sponsor| %>
                 <li class="sponsor">
                     <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>

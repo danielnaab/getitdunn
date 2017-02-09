@@ -95,7 +95,7 @@ header {
             margin: 1em;
         }
     }
-    ul {
+    ul.sponsors-list {
         list-style-type: none;
         text-align: center;
         li {
@@ -103,33 +103,33 @@ header {
             display: inline-block;
             margin: 1em;
         }
-    }
-    img {
-        display: inline-block;
-        vertical-align: middle;
-    }
-    &.platinum {
         img {
-            width: 350px;
-            height: auto;
+            display: inline-block;
+            vertical-align: middle;
         }
-    }
-    &.gold {
-        img {
-            width: 250px;
-            height: auto;
+        &.platinum {
+            img {
+                width: 300px;
+                height: auto;
+            }
         }
-    }
-    &.silver {
-        img {
-            width: 200px;
-            height: auto;
+        &.gold {
+            img {
+                width: 250px;
+                height: auto;
+            }
         }
-    }
-    &.bronze {
-        img {
-            width: 150px;
-            height: auto;
+        &.silver {
+            img {
+                width: 200px;
+                height: auto;
+            }
+        }
+        &.bronze {
+            img {
+                width: 150px;
+                height: auto;
+            }
         }
     }
 }
