@@ -43,11 +43,15 @@ configure :build do
   activate :asset_hash
 end
 
+activate :google_analytics do |ga|
+  ga.tracking_id = 'UA-22376734-4'
+  ga.minify = true
+end
+
 activate :prismic do |f|
   f.api_url = 'https://dunn.prismic.io/api'
   f.release = 'master'
-  #f.link_resolver = ->(link) {binding.pry; "#{link.type.pluralize}/#{link.slug}"}
-  f.link_resolver = ->(link) { "#{link.type.pluralize}/#{link.slug}" }
+  f.link_resolver = ->(link) { "binding.pry; #{link.type.pluralize}/#{link.slug}" }
 end
 
 if File.exists? ('data/prismic_races')
