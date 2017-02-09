@@ -1,0 +1,26 @@
+sudo: false
+branches:
+  only:
+  - master
+language: ruby
+rvm:
+  - 2.2
+install:
+  - bundle install
+before_script:
+  - git remote set-url origin "https://${GH_TOKEN}@github.com/danielnaab/getitdunn.git"
+  - git config --global user.email "dan@crushingpennies.com"
+  - git config --global user.name "Travis-CI"
+script:
+  - bundle exec middleman prismic
+  - bundle exec middleman build
+  - bundle exec middleman deploy
+env:
+  global:
+  - secure: "to7SLNhVn9BWUDOeBq13oUdrmWFooRb8+aUSk0JE9AnYuTSfEj+HkAkWi8y9chCb/LdaKHxGucKz7JckXJ4KCrPRzWPApc2KF5i4jNlUjYNlcyIK6iikvIr7vc6SXAeOMf/EiIr6ReH6Ccv4bLRAxaKwyXAZXMLftoL8FpS5cKYMNu3aiUsO+7wUGpzPBZNzFkHse3oQVbHBkim6lSq/3OMgX0lTFyxRgCQ9Ztn0gfbBaOoxIEWs1z+bAJW8o29OqdZHZJuTGbEdmeZJDcdG84uEiJfzzMkhDfyrABUfmT5xxlk2vJHfNXHUPlxBM30gp5V+WETIsL0LC3h4q3pqHjcDQ6TEKVkyjocqb8ND5uMZ41MQ3MmyAhz/QffQZtuLOYU3sYrkUH/rppzKm2ib0hY/cNMxrW2auUw8Q06s8hENIgiWGgevyTwuPJjUIvh2Y+QFBl+IytbdPW0hwvrf3YX6PKy7epgDbZIAuzCCOvT+JHw0I/d0RtFNY9rZ9csmkiRn0a0sm7STs6YtGxWbDh0sJNCVcQSJ6qi+lin0KLN7XbvOjkebkI7d0AC9qgR56iQ3uajUPCP+uUsTBqOB9Z+arHV7GZc2JWqYmNBmTrXqFgYsab42jzregsoxhY9P8+Mqv15wGnukCisKgaOutiiNS42AmIK5M5kIoWkIxcU="
+notifications:
+  email:
+    recipients:
+      - danielnaab@gmail.com
+    on_success: always
+    on_failure: always
