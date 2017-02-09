@@ -1,0 +1,24 @@
+general:
+  branches:
+    ignore:
+      - /.*/
+machine:
+  timezone: UTC
+  ruby:
+    version: 2.3.0
+  pre:
+    - "git remote set-url origin "https://${GH_TOKEN}@github.com/danielnaab/getitdunn.git""
+    - "git config --global user.email "dan@crushingpennies.com""
+    - "git config --global user.name 'CircleCI'"
+dependencies:
+  pre:
+    - bundle install
+    - bundle exec middleman prismic
+    - bundle exec middleman build
+test:
+  override:
+    - echo "No tests are needed"
+deployment:
+  autodeploy:
+    commands:
+      - bundle exec middleman deploy
