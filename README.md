@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.org/danielnaab/getitdunn.svg?branch=master)
+
 In-progress charity race website, built to replace the Wordpress site
 [Get It Dunn Run](http://www.getitdunnrun.com). *Not Live Yet*
 
