@@ -22,5 +22,9 @@ notifications:
   email:
     recipients:
       - danielnaab@gmail.com
+      - janellej@me.com
     on_success: always
     on_failure: always
+    template:
+      - "Get It Dunn Run website build complete"
+      - "Last commit: %{commit_message}"
