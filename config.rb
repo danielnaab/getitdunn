@@ -54,6 +54,11 @@ activate :prismic do |f|
   f.link_resolver = ->(link) { "binding.pry; #{link.type.pluralize}/#{link.slug}" }
 end
 
+activate :disqus do |d|
+  d.shortname = 'get-it-dunn-run'
+end
+
+
 if File.exists? ('data/prismic_races')
   races = YAML::load(File.read('data/prismic_races'))
   races.each do |index, race|
