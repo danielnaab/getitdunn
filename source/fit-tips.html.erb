@@ -10,10 +10,8 @@ title: Fit Tips
                 <%= fit_tip.fragments['date'].value.strftime('%B %e, %Y') %>
             </time>
             <%= fit_tip.fragments['author_name'].as_html(nil) %>
-            <p>
-                <%= fit_tip.fragments['text'].blocks[0].text %>
-                <%= link_to 'Read more ▶', "/fit-tips/#{fit_tip.slugs[0]}.html", { :class => 'read-more'} %>
-            </p>
+            <%= fit_tip.fragments['text'].as_html(nil) %>
+            <%= link_to 'Read more ▶', "/fit-tips/#{fit_tip.slugs[0]}.html", { :class => 'read-more'} %>
         </article>
     <% end %>
 </div>

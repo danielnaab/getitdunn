@@ -8,6 +8,7 @@
                 </li>
             <% end %>
         </ul>
+        <%= link_to 'See all Fit Tips...', '/fit-tips.html' %>
         <h1>Quick Links</h1>
         <ul>
             <li><%= link_to 'Home', '/index.html' %></li>
@@ -23,8 +24,14 @@
     </div>
     <div class="footer-text">
         <%= generals[0].fragments['footer_text'].as_html(nil) %>
+        <div id="flickr"></div>
     </div>
 </div>
 <div class="footer-credits">
     © <%= Time.now.year %> Get It Dunn 5k &amp; Half Marathon | Menomonie, WI
 </div>
+<script>
+    window.initFlickr("<%= generals[0].fragments['flickr-user-id'].value %>",
+                      "<%= generals[0].fragments['flickr-album-id'].value %>",
+                      6)
+</script>
