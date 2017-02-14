@@ -130,18 +130,34 @@ footer {
         @include outer-container;
         padding: 1em;
         .footer-links {
-            @include span-columns(4);
+            @media (min-width: 605px) {
+                @include span-columns(4);
+            }
             font-size: 80%;
         }
         .footer-text {
-            @include span-columns(8);
-            @include omega();
+            @media (min-width: 605px) {
+                @include span-columns(8);
+                @include omega();
+            }
             font-size: 80%;
         }
     }
     .footer-credits {
         text-align: center;
         font-size: 80%;
+    }
+    #flickr {
+        text-align: center;
+        img {
+            margin: 0 5px 0 0;
+            width: 30%;
+        }
+        @media (max-width: 604px) {
+            img {
+                width: 48%;
+            }
+        }
     }
 }
 
