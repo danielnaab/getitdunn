@@ -13,6 +13,7 @@
         <%= google_analytics_tag %>
     </head>
     <body class="<%= page_classes %>">
+        <%= yield_content :above_header %>
         <header class="outer">
             <%= partial('header', :locals => current_page.data) %>
         </header>
