@@ -3,14 +3,14 @@ title: Fit Tips
 ---
 
 <div class="outer">
-    <% fittips.each do |fit_tip| %>
+    <% fittips.sort! { |a,b| a.fragments['date'].value <=> b.fragments['date'].value }.reverse!.each do |fit_tip| %>
         <article class="fit_tip">
             <h1><%= fit_tip.fragments['title'].as_html(nil) %></h1>
             <time datetime="<%= fit_tip.fragments['date'].value.iso8601(3) %>">
                 <%= fit_tip.fragments['date'].value.strftime('%B %e, %Y') %>
             </time>
             <%= fit_tip.fragments['author_name'].as_html(nil) %>
-            <%= fit_tip.fragments['text'].as_html(nil) %>
+            <%= truncate fit_tip.fragments['text'].as_text(nil), :length => 500 %>
             <%= link_to 'Read more ▶', "/fit-tips/#{fit_tip.slugs[0]}.html", { :class => 'read-more'} %>
         </article>
     <% end %>
