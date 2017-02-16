@@ -33,7 +33,7 @@
         text-align: center;
         margin-top: 1em;
         @each $level, $color in $levels {
-            $level-font-size: .8em;
+            $level-font-size: .6em;
             a[name=#{$level}] {
                 border-bottom: solid 5px $color;
                 font-size: $level-font-size;
@@ -58,30 +58,6 @@
         img {
             display: inline-block;
             vertical-align: middle;
-        }
-        &.platinum {
-            img {
-                width: 300px;
-                height: auto;
-            }
-        }
-        &.gold {
-            img {
-                width: 250px;
-                height: auto;
-            }
-        }
-        &.silver {
-            img {
-                width: 200px;
-                height: auto;
-            }
-        }
-        &.bronze {
-            img {
-                width: 150px;
-                height: auto;
-            }
         }
     }
 }
