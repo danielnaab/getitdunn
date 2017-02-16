@@ -17,7 +17,7 @@ title: Results
             <a name="<%= result.fragments['year'].value.round %>">
                 <h1><%= result.fragments['year'].value.round %></h1>
                 <% if result.fragments['resultsurl'] %>
-                    <iframe width="618" height="384" frameborder="0" src="<%= result.fragments['resultsurl'].url %>"></iframe>
+                    <iframe src="<%= result.fragments['resultsurl'].url %>" allowtransparency="true" width="618" height="384" frameborder="0" ></iframe>
                 <% end %>
                 <% if result.fragments['extra-race-content'] %>
                     <%= result.fragments['extra-race-content'].as_html(nil) %>

@@ -58,6 +58,8 @@ activate :disqus do |d|
   d.shortname = 'get-it-dunn-run'
 end
 
+# All pages except home use the same layout (the header differs)
+page '/index.html', :layout => :home
 
 if File.exists? ('data/prismic_races')
   races = YAML::load(File.read('data/prismic_races'))
