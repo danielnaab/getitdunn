@@ -20,10 +20,10 @@ window.initFlickr = function (user, album, limit) {
         getPhotos: function (data) {
             if (data && data.items) {
                 var items = data.items
-                //var title = data.title
-                //var albumTitle = title.replace('Content from ', '')
-                //var html = '<h3>' + albumTitle + '</h3>'
-                var html = '<div class="images">'
+                var title = data.title
+                var albumTitle = title.replace('Content from ', '')
+                var html = '<h3>Flickr: <a target=_blank href="' + data.link + '">' + albumTitle + '</a></h3>'
+                html += '<div class="images">'
 
                 for (var i = 0; i < items.length; i++) {
                     var item = items[i]

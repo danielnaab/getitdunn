@@ -2,7 +2,7 @@
     <div class="footer-links">
         <h1>Recent Fit Tips</h1>
         <ul>
-            <% fittips[0..5].each do |fit_tip| %>
+            <% fittips[0..2].each do |fit_tip| %>
                 <li>
                     <%= link_to fit_tip.fragments['title'].value, "/fit-tips/#{fit_tip.slugs[0]}.html" %>
                 </li>
@@ -28,7 +28,7 @@
     </div>
 </div>
 <div class="footer-credits">
-    © <%= Time.now.year %> Get It Dunn 5k &amp; Half Marathon | Menomonie, WI
+    © <%= Time.now.year %> Get It Dunn 5k &amp; Half Marathon | Menomonie, WI | Designed by <a target=_blank href="http://www.kismetbydesign.com">Kismet By Design</a> and <a target=_blank href="http://crushingpennies.com">Crushing Pennies</a>
 </div>
 <script>
     window.initFlickr("<%= generals[0].fragments['flickr-user-id'].value %>",

@@ -164,11 +164,14 @@ footer {
 header {
     padding: 1em;
     text-align: center;
+    background-color: $secondary-background-color;
     nav {
+        @include outer-container;
         a {
             margin-right: 1em;
             font-family: $serif;
             text-transform: uppercase;
+            font-weight: bold;
         }
     }
 }
