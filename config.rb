@@ -65,7 +65,7 @@ if File.exists? ('data/prismic_races')
   races = YAML::load(File.read('data/prismic_races'))
   races.each do |index, race|
     proxy(
-      "/#{race.slugs[0]}.html",
+      "/#{race.uid}.html",
       '/race.html',
       :locals => {:race => race},
       :ignore => true
