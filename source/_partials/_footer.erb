@@ -1,5 +1,14 @@
 <div class="footer-content">
     <div class="footer-links">
+        <div>
+            SAY HELLO:<br>
+            <a href="mailto:<%= generals[0].fragments['contact-email-address'].value %>">
+                <%= generals[0].fragments['contact-email-address'].value %>
+            </a>
+        </div>
+        <a target=_blank href="<%= generals[0].fragments['facebook-url'].value %>"><img src="images/facebook.png"></a>
+        <a target=_blank href="<%= generals[0].fragments['twitter-url'].value %>"><img src="images/twitter.png"></a>
+        <a target=_blank href="<%= generals[0].fragments['flickr-url'].value %>"><img src="images/flickr.png"></a>
         <h1>Recent Fit Tips</h1>
         <ul>
             <% fittips[0..2].each do |fit_tip| %>
