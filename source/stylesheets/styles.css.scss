@@ -148,12 +148,11 @@ footer {
         font-size: 80%;
     }
     #flickr {
-        text-align: center;
         img {
             margin: 0 5px 0 0;
-            width: 30%;
+            width: 32%;
         }
-        @media (max-width: 604px) {
+        @media (max-width: 615px) {
             img {
                 width: 48%;
             }
