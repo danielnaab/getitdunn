@@ -1,14 +1,8 @@
 <div class="footer-content">
     <div class="footer-links">
-        <div>
-            SAY HELLO:<br>
-            <a href="mailto:<%= generals[0].fragments['contact-email-address'].value %>">
-                <%= generals[0].fragments['contact-email-address'].value %>
-            </a>
-        </div>
-        <a target=_blank href="<%= generals[0].fragments['facebook-url'].value %>"><img src="images/facebook.png"></a>
-        <a target=_blank href="<%= generals[0].fragments['twitter-url'].value %>"><img src="images/twitter.png"></a>
-        <a target=_blank href="<%= generals[0].fragments['flickr-url'].value %>"><img src="images/flickr.png"></a>
+        <a class="social" target=_blank href="<%= generals[0].fragments['facebook-url'].value %>"><img src="images/facebook.png"></a>
+        <a class="social" target=_blank href="<%= generals[0].fragments['twitter-url'].value %>"><img src="images/twitter.png"></a>
+        <a class="social" target=_blank href="<%= generals[0].fragments['flickr-url'].value %>"><img src="images/flickr.png"></a>
         <h1>Recent Fit Tips</h1>
         <ul>
             <% fittips[0..2].each do |fit_tip| %>
@@ -29,7 +23,13 @@
             <li><%= link_to 'Results', '/results.html' %></li>
             <li><%= link_to 'About Us', '/about-us.html' %></li>
         </ul>
-        <a href="<%= generals[0].fragments['register_link'].url %>" target="_blank"><button>CLICK TO REGISTER!</button></a>
+        <a href="<%= generals[0].fragments['register_link'].url %>" target="_blank"><button>REGISTER NOW</button></a>
+        <div class="email-link">
+            SAY HELLO:
+            <a href="mailto:<%= generals[0].fragments['contact-email-address'].value %>">
+                <%= generals[0].fragments['contact-email-address'].value %>
+            </a>
+        </div>
     </div>
     <div class="footer-text">
         <%= generals[0].fragments['footer_text'].as_html(nil) %>

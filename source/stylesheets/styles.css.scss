@@ -134,6 +134,12 @@ footer {
                 @include span-columns(4);
             }
             font-size: 80%;
+            a.social {
+                margin-right: .5em;
+            }
+            .email-link {
+                margin-top: .5em;
+            }
         }
         .footer-text {
             @media (min-width: 605px) {
