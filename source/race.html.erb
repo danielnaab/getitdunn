@@ -23,9 +23,11 @@ title: Race Information
         <%= race.fragments['details'].as_html(nil) %>
     </div>
     <!-- wrap map iframe to turn off mouse scroll and turn it back on on click -->
-    <div class="map-wrap">
-        <div class="overlay" onClick="style.pointerEvents='none'"></div>
-            <iframe class="map" src="https://www.google.com/maps/d/embed?mid=<%= race.fragments['route'].value %>" frameBorder="0"></iframe>
+    <% if race.fragments['route'] %>
+        <div class="map-wrap">
+            <div class="overlay" onClick="style.pointerEvents='none'"></div>
+                <iframe class="map" src="https://www.google.com/maps/d/embed?mid=<%= race.fragments['route'].value %>" frameBorder="0"></iframe>
+            </div>
         </div>
-    </div>
+    <% end %>
 </div>
