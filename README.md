@@ -1,7 +1,6 @@
 ![Build Status](https://travis-ci.org/danielnaab/getitdunn.svg?branch=master)
 
-In-progress charity race website, built to replace the Wordpress site
-[Get It Dunn Run](http://www.getitdunnrun.com). *Not Live Yet*
+Charity race website, built for [Get It Dunn Run](http://www.getitdunnrun.com).
 
 Uses [Prismic.io](http://prismic.io) for data management. The Prismic schema
 will be documented later.
