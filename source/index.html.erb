@@ -4,4 +4,11 @@ title: Welcome!
 
 <div class="outer content">
     <%= homes[0].fragments['page_text'].as_html(nil) %>
+    <div class="ads">
+        <% homepageads.each do |ad| %>
+            <a href="<%= ad.fragments['url'].url %>" target=_blank>
+                <img clas="ad" src="<%= ad.fragments['ad-image'].main.url %>" alt="<%= ad.fragments['alt-text'].value %>">
+            </a>
+        <% end %>
+    </div>
 </div>
