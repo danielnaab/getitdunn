@@ -33,7 +33,7 @@ title: Sponsors
     <% if @level_sponsors.has_key? 'Platinum' %>
         <h1><a name="platinum">Platinum</a></h1>
         <ul class="sponsors-list platinum">
-            <% @level_sponsors['Platinum'].each do |sponsor| %>
+            <% @level_sponsors['Platinum'].sort_by {|sponsor| sponsor.fragments['name'].value}.each do |sponsor| %>
                 <li class="sponsor">
                     <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
                 </li>
@@ -44,7 +44,7 @@ title: Sponsors
     <% if @level_sponsors.has_key? 'Gold' %>
         <h1><a name="gold">Gold</a></h1>
         <ul class="sponsors-list gold">
-            <% @level_sponsors['Gold'].each do |sponsor| %>
+            <% @level_sponsors['Gold'].sort_by {|sponsor| sponsor.fragments['name'].value}.each do |sponsor| %>
                 <li class="sponsor">
                     <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
                 </li>
@@ -55,7 +55,7 @@ title: Sponsors
     <% if @level_sponsors.has_key? 'Silver' %>
         <h1><a name="silver">Silver</a></h1>
         <ul class="sponsors-list silver">
-            <% @level_sponsors['Silver'].each do |sponsor| %>
+            <% @level_sponsors['Silver'].sort_by {|sponsor| sponsor.fragments['name'].value}.each do |sponsor| %>
                 <li class="sponsor">
                     <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
                 </li>
@@ -66,7 +66,7 @@ title: Sponsors
     <% if @level_sponsors.has_key? 'Bronze' %>
         <h1><a name="bronze">Bronze</a></h1>
         <ul class="sponsors-list bronze">
-            <% @level_sponsors['Bronze'].each do |sponsor| %>
+            <% @level_sponsors['Bronze'].sort_by {|sponsor| sponsor.fragments['name'].value}.each do |sponsor| %>
                 <li class="sponsor">
                     <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
                 </li>
@@ -77,7 +77,7 @@ title: Sponsors
     <% if @level_sponsors.has_key? 'Friend' %>
         <h1><a name="friends">Friends</a></h1>
         <ul class="sponsors-list friends">
-            <% @level_sponsors['Friend'].each do |sponsor| %>
+            <% @level_sponsors['Friend'].sort_by {|sponsor| sponsor.fragments['name'].value}.each do |sponsor| %>
                 <li class="sponsor">
                     <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
                 </li>
