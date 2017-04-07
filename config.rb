@@ -77,8 +77,8 @@ if File.exists? ('data/prismic_fittips')
   fit_tips = YAML::load(File.read('data/prismic_fittips'))
   fit_tips.each do |index, fit_tip|
     proxy(
-      "/fit-tips/#{fit_tip.slugs[0]}.html",
-      '/fit-tip.html',
+      "/blog/#{fit_tip.slugs[0]}.html",
+      '/blog-entry.html',
       :locals => {:fit_tip => fit_tip},
       :ignore => true
     )

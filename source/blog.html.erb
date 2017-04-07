@@ -11,7 +11,7 @@ title: Fit Tips
             </time>
             <%= fit_tip.fragments['author_name'].as_html(nil) %>
             <%= truncate fit_tip.fragments['text'].as_text(nil), :length => 500 %>
-            <%= link_to 'Read more ▶', "/fit-tips/#{fit_tip.slugs[0]}.html", { :class => 'read-more'} %>
+            <%= link_to 'Read more ▶', "/blog/#{fit_tip.slugs[0]}.html", { :class => 'read-more'} %>
         </article>
     <% end %>
 </div>
