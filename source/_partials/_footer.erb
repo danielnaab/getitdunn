@@ -5,9 +5,9 @@
         <a class="social" target=_blank href="<%= generals[0].fragments['flickr-url'].value %>"><img src="/images/flickr.png"></a>
         <h2>Recent Blog Posts</h2>
         <ul>
-            <% fittips[0..2].each do |fit_tip| %>
+            <% fittips.sort! { |a,b| a.fragments['date'].value <=> b.fragments['date'].value }.reverse![0..2].each do |fit_tip| %>
                 <li>
-                    <%= link_to fit_tip.fragments['title'].value, "/fit-tips/#{fit_tip.slugs[0]}.html" %>
+                    <%= link_to fit_tip.fragments['title'].value, "/blog/#{fit_tip.slugs[0]}.html" %>
                 </li>
             <% end %>
         </ul>
