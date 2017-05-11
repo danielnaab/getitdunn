@@ -23,7 +23,9 @@
             <li><%= link_to 'Results', '/results.html' %></li>
             <li><%= link_to 'About Us', '/about-us.html' %></li>
         </ul>
-        <a href="<%= generals[0].fragments['register_link'].url %>" target="_blank"><button>REGISTER NOW</button></a>
+        <% if !generals[0].fragments['register_link'].url.blank? %>
+            <a href="<%= generals[0].fragments['register_link'].url %>" target="_blank"><button>REGISTER NOW</button></a>
+        <% end %>
         <div class="email-link">
             SAY HELLO:
             <a href="mailto:<%= generals[0].fragments['contact-email-address'].value %>">
