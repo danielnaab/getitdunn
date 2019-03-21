@@ -139,6 +139,7 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rake (12.3.2)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
@@ -179,6 +180,7 @@ DEPENDENCIES
   middleman-prismic!
   neat (~> 1.7)
   pry
+  rake (~> 12.3)
 
 BUNDLED WITH
-   1.13.2
+   1.16.6
