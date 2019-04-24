@@ -16,7 +16,7 @@
         <ul>
             <li><%= link_to 'Home', '/index.html' %></li>
             <% races.each do |race| %>
-                <li><%= link_to race.fragments['name'].as_html(nil), "/#{race.uid}.html" %></li>
+                <li><%= link_to race.fragments['title'].as_html(nil), "/#{race.uid}.html" %></li>
             <% end %>
             <li><%= link_to 'Blog', '/blog.html' %></li>
             <li><%= link_to 'Sponsors', '/sponsors.html' %></li>
