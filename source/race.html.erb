@@ -8,7 +8,7 @@ title: Race Information
         <% if homes[0].fragments['overlay'] %>
             <h1><%= homes[0].fragments['overlay'].as_html(nil) %></h1>
         <% end %>
-        <% if !generals[0].fragments['register_link'].url.blank? %>
+        <% if generals[0].fragments['register_link'] && !generals[0].fragments['register_link'].url.blank? %>
             <h1 class="register">
                 <a href="<%= generals[0].fragments['register_link'].url %>" target="_blank"><button>REGISTER NOW</button></a>
             </h1>
