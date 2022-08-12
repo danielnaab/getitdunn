@@ -12,9 +12,4 @@ jobs:
       - name: Build site
         run: docker-compose run middleman bundle exec middleman build
       - name: Deploy site
-        run: docker-compose run middleman bundle exec middleman deploy
-      - name: Build & Deploy to GitHub Pages
-        with:
-          REMOTE_BRANCH: gh-pages
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: yurikoval/middleman-gh-pages-action@master
+        run: docker-compose run middleman ./deploy.sh
