@@ -13,9 +13,9 @@ jobs:
           ruby-version: "2.3.1"
           bundler-cache: true
       - name: Build site
-        run: |
-          bundle exec middleman prismic
-          bundle exec middleman build --verbose
-          git config --global user.email "robot@getitdunnrun.com"
-          git config --global user.name "Build Bot"
-          bundle exec middleman deploy
+        run: bundle exec middleman prismic
+      - name: Build & Deploy to GitHub Pages
+        with:
+          REMOTE_BRANCH: gh-pages
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: yurikoval/middleman-gh-pages-action@master
