@@ -15,7 +15,7 @@ def rebuild(secret):
         URL,
         headers={
             "Accept": "application/vnd.github+json",
-            "Authorization": "token " + os.environ["TRAVIS_TOKEN"],
+            "Authorization": "token " + os.environ["GH_TOKEN"],
         },
         data='{"event_type":"build-site","client_payload":{}}',
     )
