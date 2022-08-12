@@ -12,7 +12,7 @@ jobs:
         with:
           ruby-version: "2.3.1"
           bundler-cache: true
-      - name: Build site
+      - name: Download prismic.io data
         run: bundle exec middleman prismic
       - name: Build & Deploy to GitHub Pages
         with:
