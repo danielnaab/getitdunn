@@ -13,5 +13,5 @@ jobs:
       - name: Build site
         run: |
           bundle exec middleman prismic
-          bundle exec middleman build
+          bundle exec middleman build --verbose
           bundle exec middleman deploy
