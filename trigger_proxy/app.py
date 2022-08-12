@@ -3,17 +3,19 @@ import os
 import hug
 import requests
 
-URL = 'https://api.travis-ci.org/repo/danielnaab%2Fgetitdunn/requests'
+URL = "https://api.github.com/repos/danielnaab/getitdunn/dispatches"
 
 
-@hug.post('/rebuild')
+@hug.post("/rebuild")
 def rebuild(secret):
-    if os.environ['REBUILD_SECRET'] != secret:
-        return 'Permission Denied'
+    if os.environ["REBUILD_SECRET"] != secret:
+        return "Permission Denied"
 
-    return requests.post(URL, headers={
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'Travis-API-Version': '3',
-      'Authorization': 'token ' + os.environ['TRAVIS_TOKEN']
-    }, data='{"request": {"branch":"master"}}')
+    return requests.post(
+        URL,
+        headers={
+            "Accept": "application/vnd.github+json",
+            "Authorization": "token " + os.environ["TRAVIS_TOKEN"],
+        },
+        data='{"event_type":"build-site","client_payload":{}}',
+    )
