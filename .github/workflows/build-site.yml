@@ -1,0 +1,21 @@
+name: Build getitdunnrun.com
+on:
+  workflow_dispatch:
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "2.2.10"
+          bundler-cache: true
+      - name: Download prismic.io data
+        run: bundle exec middleman prismic
+      - name: Build & Deploy to GitHub Pages
+        with:
+          REMOTE_BRANCH: gh-pages
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: yurikoval/middleman-gh-pages-action@master
