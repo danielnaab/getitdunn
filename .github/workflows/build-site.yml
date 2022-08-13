@@ -13,5 +13,7 @@ jobs:
         run: docker-compose run middleman bundle exec middleman prismic
       - name: Build site
         run: docker-compose run middleman bundle exec middleman build
-      - name: Deploy site
-        run: ./deploy.sh
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
