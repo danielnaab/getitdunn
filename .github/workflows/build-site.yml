@@ -14,4 +14,4 @@ jobs:
       - name: Build site
         run: docker-compose run middleman bundle exec middleman build
       - name: Deploy site
-        run: docker-compose run middleman ./deploy.sh
+        run: ./deploy.sh

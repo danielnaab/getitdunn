@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euxo pipefail
+
 git config --global user.email "dan@getitdunnrun.com"
 git config --global user.name "getitdunnbot"
 
