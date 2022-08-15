@@ -2,6 +2,9 @@ name: Build getitdunnrun.com
 on:
   workflow_dispatch:
   repository_dispatch:
+  push:
+    branches:
+      - master
 jobs:
   build-release:
     runs-on: ubuntu-latest
