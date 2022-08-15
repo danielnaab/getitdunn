@@ -7,3 +7,6 @@ services:
       - .:/src
       - ~/.ssh:/root/.ssh
     working_dir: /src
+    ports:
+      - "4567:4567"
+    command: bundle exec middleman server
