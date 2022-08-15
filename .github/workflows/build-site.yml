@@ -13,9 +13,9 @@ jobs:
         with:
           ref: master
       - name: Getting Prismic content
-        run: docker-compose run middleman bundle exec middleman prismic
+        run: docker-compose run app bundle exec middleman prismic
       - name: Build site
-        run: docker-compose run middleman bundle exec middleman build
+        run: docker-compose run app bundle exec middleman build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
