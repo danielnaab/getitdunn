@@ -2,6 +2,13 @@
 
 Charity race website, built for [Get It Dunn Run](http://www.getitdunnrun.com).
 
+# Download Prismic content:
+
+docker-compose run app bundle exec middleman prismic
+
+# Run local webserver at http://localhost:4567
+docker-compose up
+
 Uses [Prismic.io](http://prismic.io) for data management. The Prismic schema
 will be documented later.
 
