@@ -24,6 +24,9 @@ title: Sponsors
         <% if @level_sponsors.has_key? 'Friend' %>
             <a class="friends" href="#friends">Friends</a>
         <% end %>
+        <% if @level_sponsors.has_key? 'Kids' %>
+            <a class="kids" href="#kids">Kids' Fun Run</a>
+        <% end %>
     </div>
 
     <% if sponsorships[0].fragments['top-text'] %>
@@ -78,6 +81,17 @@ title: Sponsors
         <h1><a name="friends">Friends</a></h1>
         <ul class="sponsors-list friends">
             <% @level_sponsors['Friend'].sort_by {|sponsor| sponsor.fragments['name'].value}.each do |sponsor| %>
+                <li class="sponsor">
+                    <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <% if @level_sponsors.has_key? 'Kids' %>
+        <h1><a name="kids">Kids' Fun Run</a></h1>
+        <ul class="sponsors-list kids">
+            <% @level_sponsors['Kids'].sort_by {|sponsor| sponsor.fragments['name'].value}.each do |sponsor| %>
                 <li class="sponsor">
                     <%= partial('sponsor', :locals => { :sponsor => sponsor }) %>
                 </li>
