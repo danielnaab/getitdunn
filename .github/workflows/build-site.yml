@@ -9,13 +9,13 @@ jobs:
   build-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: master
       - name: Getting Prismic content
-        run: docker-compose run app bundle exec middleman prismic
+        run: docker compose run app bundle exec middleman prismic
       - name: Build site
-        run: docker-compose run app bundle exec middleman build --verbose
+        run: docker compose run app bundle exec middleman build --verbose
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
